@@ -1,1 +1,258 @@
-# LandingPage
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul - Skincare for Radiant Skin</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fffaf5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background: #ffb6c1;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #ffdde1;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: #ffb6c1;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: white;
+            color: #ff6f91;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #ffe4e1;
+            transform: scale(1.1);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: #ffe4e1;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        #formStatus {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ffb6c1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Soul</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Glow Naturally with Soul</h1>
+        <p>Pure, organic, and nourishing skincare products for radiant skin.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Bestsellers</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="C:\Users\chithra\Downloads\shreshtha_r_shet_generate_an_image_of_a_gentle_face_cream_with_the_eeb31619-a662-4e01-bf71-50613bb9bf1e.png" alt="Face Cream">
+                <h3>Hydrating Face Cream</h3>
+                <p>Deep hydration for glowing skin.</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\chithra\Downloads\Gemini_Generated_Image_tae7f2tae7f2tae7.jpg" alt="Serum">
+                <h3>Vitamin C Serum</h3>
+                <p>Brighten and even out skin tone.</p>
+            </div>
+            <div class="product">
+                <img src="C:\Users\chithra\Downloads\shreshtha_r_shet_generate_an_image_of_a_facewash_bottle_with_the_lo_61f2e263-7227-4c27-a30c-1e3fe32e691b.png" alt="Face Wash">
+                <h3>Gentle Face Wash</h3>
+                <p>Cleanse your skin without dryness.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p id="formStatus"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Soul Skincare. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Smooth Scroll for Navigation Links
+            document.querySelectorAll('nav ul li a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offset = targetElement.getBoundingClientRect().top + window.scrollY - 80;
+                        window.scrollTo({ top: offset, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Contact Form Submission
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                let name = document.getElementById("name").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let message = document.getElementById("message").value.trim();
+                let formStatus = document.getElementById("formStatus");
+                let submitButton = document.querySelector("button[type='submit']");
+
+                if (name && email && message) {
+                    formStatus.textContent = "Message Sent Successfully!";
+                    formStatus.style.color = "green";
+                    this.reset();
+
+                    // Disable button temporarily
+                    submitButton.disabled = true;
+                    setTimeout(() => { submitButton.disabled = false; }, 3000);
+                } else {
+                    formStatus.textContent = "Please fill out all fields.";
+                    formStatus.style.color = "red";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
